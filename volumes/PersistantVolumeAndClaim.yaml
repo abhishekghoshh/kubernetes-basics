@@ -12,7 +12,7 @@ spec:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Recycle
   hostPath:
-    path: /Users/abhishekghosh/Desktop/E4R-final/kubernetes-basics/volumes/data
+    path: /data/nginx/html
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -28,28 +28,3 @@ spec:
   accessModes:
     - ReadWriteMany
 ---
-apiVersion: v1
-kind: Pod
-metadata:
-  name: nginx
-  labels:
-    app: nginx
-spec:
-  containers:
-  - name: nginx
-    image: nginx
-    # command: ["/bin/sh","-c"]
-    # args: ["shuf -i 0-100 -n 1 >> /opt/number.out;"]
-    volumeMounts:
-    - mountPath: /usr/share/nginx/html
-      name: data-volume
-    resources:
-      limits:
-        memory: "128Mi"
-        cpu: "500m"
-  volumes:
-    - name: data-volume
-      persistentVolumeClaim:
-        claimName: pvc-1
----
-

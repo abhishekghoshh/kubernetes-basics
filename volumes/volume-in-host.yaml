@@ -20,6 +20,6 @@ spec:
   volumes:
     - name: data-volume
       hostPath:
-        path: /Users/abhishekghosh/Desktop/E4R-final/kubernetes-basics/volumes/data
-        type: Directory
+        path: /data/numbers
+        type: DirectoryOrCreate
 
