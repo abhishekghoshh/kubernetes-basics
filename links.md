@@ -15,3 +15,7 @@ Headless and StatefulSet service:
 
 What is helm:
 - https://www.youtube.com/watch?v=-ykwb1d0DXU
+
+
+Other refferences:
+- https://kubernetes.io/docs/tasks/administer-cluster/access-cluster-api/
